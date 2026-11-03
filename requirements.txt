@@ -1,0 +1,6 @@
+streamlit>=1.40
+python-dotenv
+pillow
+google-genai
+anthropic
+openai
