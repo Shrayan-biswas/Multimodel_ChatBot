@@ -1,0 +1,19 @@
+
+name: Keep Streamlit apps awake
+
+on:
+  schedule:
+    - cron: '0 */8 * * *'
+
+  workflow_dispatch:
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Keep Streamlit app alive
+        uses: gpenessot/streamlit-keep-alive@1640101c229364726a5f3adf78ad095c53ef2283
+        with:
+          app-urls: |
+            https://multimodelchatbot-zltca8s32yyzwuapywud3m.streamlit.app/
