@@ -2,6 +2,18 @@
 
 A Streamlit-based multimodal chat application that brings several hosted AI providers and locally hosted Ollama models into one clean interface. Choose a provider and model, attach supported files, adjust generation settings and chat from a single screen.
 
+<p align="center">
+  <a href="https://multimodelchatbot-zltca8s32yyzwuapywud3m.streamlit.app/" target="_blank">
+    <img src="https://img.shields.io/badge/🚀_Open_AI_Studio-Launch_App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Open AI Studio">
+  </a>
+</p>
+
+<p align="center">
+  <b>One interface. Multiple AI providers. Multimodal conversations.</b>
+</p>
+
+---
+
 ## Features
 
 - Multiple providers: Google Gemini, Anthropic Claude, OpenAI, xAI Grok, DeepSeek and local Ollama.
@@ -15,7 +27,7 @@ A Streamlit-based multimodal chat application that brings several hosted AI prov
 - Temperature, output-token and system-instruction controls.
 - Local model support through Ollama.
 
-## Project structure
+## Project Structure
 
 ```text
 gemini_multimodal_chatbot/
@@ -56,8 +68,8 @@ Copy-Item .env.example .env
 If activation is blocked, call the virtual environment's Python directly:
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -m streamlit run app.py
+.\.venv\python.exe -m pip install -r requirements.txt
+.\.venv\python.exe -m streamlit run app.py
 ```
 
 ### macOS / Linux
@@ -74,7 +86,7 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-## API key configuration
+## API Key Configuration
 
 Enter the API key in the app's **API credentials** section, or place it in `.env`:
 
@@ -104,7 +116,7 @@ streamlit run app.py
 
 Open the local URL printed by Streamlit, normally `http://localhost:8501`.
 
-## Use local models with Ollama
+## Use Local Models with Ollama
 
 1. Install Ollama: https://ollama.com/
 2. Pull a model:
@@ -124,9 +136,11 @@ Open the local URL printed by Streamlit, normally `http://localhost:8501`.
 
 For image prompts, use a vision-capable model compatible with your Ollama setup. The default Ollama endpoint is `http://localhost:11434`.
 
-## Attachments and model compatibility
+## Attachments and Model Compatibility
 
-The app accepts common image, audio, video and document formats. Actual support depends on the provider API and selected model. Text files (TXT, MD, CSV and JSON) are decoded and added to the prompt. Unsupported media may be skipped with a warning.
+The app accepts common image, audio, video and document formats. Actual support depends on the provider API and selected model.
+
+Text files (TXT, MD, CSV and JSON) are decoded and added to the prompt. Unsupported media may be skipped with a warning.
 
 Provider capabilities, API formats, model IDs, file-size limits and pricing change. Verify current provider documentation before relying on a particular model or media type. Hosted API calls may incur charges.
 
@@ -139,7 +153,7 @@ Provider capabilities, API formats, model IDs, file-size limits and pricing chan
 - **Unsupported attachment:** Switch to a provider/model that supports that media type.
 - **Dependency errors:** Recreate `.venv` with a supported Python version and reinstall `requirements.txt`.
 
-## Security and privacy
+## Security and Privacy
 
 - `.env` and local Streamlit secrets should never be committed.
 - API keys entered in the app are held in the active Streamlit session.
